@@ -1,0 +1,31 @@
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+th {
+  background: #f5f5f5;
+}
+
+button {
+  margin-right: 5px;
+}
+
+.btn-create {
+  margin-bottom: 10px;
+}
+
+.btn-delete {
+  color: white;
+  background: red;
+}

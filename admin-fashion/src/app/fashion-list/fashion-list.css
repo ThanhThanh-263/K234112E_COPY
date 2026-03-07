@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,400;1,700;1,900&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ================================================
+   FASHION LIST — Cherie Editorial Style
+   ================================================ */
+
+:host {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  color: #1a1210;
+  background: #f2ede4;
+  min-height: 100vh;
+}
+
+/* ── PAGE HEADER ── */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  font-style: italic;
+  color: #f2ede4;
+  margin: 0;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  animation: titleIn 0.8s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+@keyframes titleIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── HERO BANNER (wraps h2 + btn-add) ── */
+/* Angular targets :host > * so we style the natural flow */
+/* h2 sits inside an implicit banner — we use a trick:
+   give the host a red top band via padding + bg on h2 block */
+h2 {
+  background: #C0211A;
+  padding: 3.5rem 3rem 2rem;
+  display: block;
+}
+
+/* ── ADD BUTTON ── */
+.btn-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #f2ede4;
+  background: #1a1210;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 18px rgba(26,18,16,0.25);
+  margin: 0 3rem 2.5rem;
+  position: relative;
+  top: -0.5rem;
+  animation: fadeUp 0.5s cubic-bezier(0.16,1,0.3,1) 0.1s both;
+}
+
+.btn-add::before {
+  content: '+';
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.btn-add:hover {
+  background: #C0211A;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(192,33,26,0.35);
+}
+
+/* ── ERROR ── */
+.error {
+  font-size: 0.82rem;
+  color: #C0211A;
+  background: rgba(192,33,26,0.07);
+  border-left: 3px solid #C0211A;
+  padding: 0.6rem 1rem;
+  margin: 0 3rem 1.5rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── TABLE WRAPPER ── */
+table {
+  width: calc(100% - 6rem);
+  margin: 0 3rem 4rem;
+  border-collapse: collapse;
+  background: #faf7f2;
+  box-shadow:
+    0 2px 0 #c5b9b0,
+    0 8px 32px rgba(26,18,16,0.1);
+  animation: fadeUp 0.55s cubic-bezier(0.16,1,0.3,1) 0.2s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── THEAD ── */
+thead tr {
+  background: #1a1210;
+}
+
+thead th {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(242,237,228,0.7);
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border: none;
+  white-space: nowrap;
+}
+
+thead th:first-child {
+  color: rgba(192,33,26,0.8);
+  width: 90px;
+}
+
+/* ── TBODY ── */
+tbody tr {
+  border-bottom: 1px solid #ede7dc;
+  transition: background 0.18s ease;
+  animation: rowIn 0.4s ease both;
+}
+
+tbody tr:nth-child(even) {
+  background: #f5f0e8;
+}
+
+tbody tr:hover {
+  background: #fdf0e8;
+}
+
+@keyframes rowIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+tbody tr:nth-child(1) { animation-delay: 0.05s; }
+tbody tr:nth-child(2) { animation-delay: 0.10s; }
+tbody tr:nth-child(3) { animation-delay: 0.15s; }
+tbody tr:nth-child(4) { animation-delay: 0.20s; }
+tbody tr:nth-child(5) { animation-delay: 0.25s; }
+tbody tr:nth-child(6) { animation-delay: 0.30s; }
+
+/* ── CELLS ── */
+tbody td {
+  padding: 0.9rem 1.25rem;
+  vertical-align: middle;
+  border: none;
+  font-size: 0.88rem;
+  color: #3a2e28;
+}
+
+/* ID */
+tbody td:nth-child(1) {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: #9a8880;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Style */
+tbody td:nth-child(2) {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #C0211A;
+}
+
+/* Title */
+tbody td:nth-child(3) {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: #1a1210;
+  max-width: 260px;
+}
+
+/* Image */
+tbody td:nth-child(4) img {
+  width: 56px;
+  height: 70px;
+  object-fit: cover;
+  display: block;
+  background: #fff;
+  padding: 4px 4px 14px;
+  box-shadow:
+    0 2px 8px rgba(26,18,16,0.15),
+    0 4px 16px rgba(26,18,16,0.08);
+  transform: rotate(-1.5deg);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+tbody td:nth-child(4) img:hover {
+  transform: rotate(0deg) scale(1.08);
+  box-shadow: 0 6px 20px rgba(26,18,16,0.22);
+}
+
+/* Actions */
+tbody td:nth-child(5) {
+  white-space: nowrap;
+}
+
+tbody td:nth-child(5) button {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: none;
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+  margin-right: 0.4rem;
+  transition: all 0.18s ease;
+}
+
+/* Xem */
+tbody td:nth-child(5) button:nth-child(1) {
+  color: #1a1210;
+  background: transparent;
+  border: 1px solid #c5b9b0;
+}
+tbody td:nth-child(5) button:nth-child(1):hover {
+  background: #1a1210;
+  color: #f2ede4;
+  border-color: #1a1210;
+}
+
+/* Sửa */
+tbody td:nth-child(5) button:nth-child(2) {
+  color: #f2ede4;
+  background: #C0211A;
+  border: 1px solid #C0211A;
+}
+tbody td:nth-child(5) button:nth-child(2):hover {
+  background: #8b1510;
+  border-color: #8b1510;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(192,33,26,0.3);
+}
+
+/* Xóa */
+tbody td:nth-child(5) button:nth-child(3) {
+  color: #9a8880;
+  background: transparent;
+  border: 1px solid transparent;
+}
+tbody td:nth-child(5) button:nth-child(3):hover {
+  color: #C0211A;
+  border-color: rgba(192,33,26,0.3);
+  background: rgba(192,33,26,0.05);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  h2 { padding: 2.5rem 1.5rem 1.5rem; font-size: 2.5rem; }
+  .btn-add { margin: 0 1.5rem 2rem; }
+  .error { margin: 0 1.5rem 1rem; }
+  table { width: calc(100% - 3rem); margin: 0 1.5rem 3rem; }
+
+  tbody td:nth-child(1),
+  tbody td:nth-child(3) { display: none; }
+}

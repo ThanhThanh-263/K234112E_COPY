@@ -1,0 +1,12 @@
+[
+    { 
+        "context": ["/exchange"], 
+        "target": "https://fakestoreapi.com", 
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/exchange": "/products"  
+        }  
+    }
+]

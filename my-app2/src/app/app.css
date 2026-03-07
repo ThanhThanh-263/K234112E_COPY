@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* ===== GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f0e8;
+  font-family: 'Crimson Pro', Georgia, serif;
+  color: #2c1f0f;
+}
+
+/* ===== H1 TITLE ===== */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4a2c0a;
+  letter-spacing: 2px;
+  padding: 28px 36px 20px;
+  border-bottom: 2px solid #d4b896;
+  background: #f5f0e8;
+}
+
+/* ===== NAV CONTAINER ===== */
+#container {
+  background: #2c1f0f;
+  padding: 0 24px;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 3px 12px rgba(44, 31, 15, 0.25);
+}
+
+/* ===== TOP-LEVEL UL ===== */
+#container > ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  align-items: stretch;
+}
+
+/* ===== TOP-LEVEL LI ===== */
+#container > ul > li {
+  position: relative;
+}
+
+/* ===== TOP-LEVEL LINKS ===== */
+#container > ul > li > a {
+  display: block;
+  padding: 14px 18px;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.72rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #f5dab5;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+#container > ul > li > a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 18px;
+  right: 18px;
+  height: 2px;
+  background: #c9873e;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+#container > ul > li:hover > a {
+  color: #fff;
+  background: rgba(255,255,255,0.05);
+}
+
+#container > ul > li:hover > a::after {
+  transform: scaleX(1);
+}
+
+/* ===== DROPDOWN UL ===== */
+#container ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  background: #3a2008;
+  min-width: 220px;
+  border-top: 2px solid #c9873e;
+  border-bottom: 1px solid #d4b896;
+  box-shadow: 4px 6px 18px rgba(44, 31, 15, 0.35);
+  z-index: 999;
+  animation: dropDown 0.2s ease both;
+}
+
+@keyframes dropDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#container ul li:hover > ul {
+  display: block;
+}
+
+/* ===== DROPDOWN LI ===== */
+#container ul ul li {
+  border-bottom: 1px solid rgba(212, 184, 150, 0.15);
+}
+#container ul ul li:last-child {
+  border-bottom: none;
+}
+
+/* ===== DROPDOWN LINKS ===== */
+#container ul ul li a {
+  display: block;
+  padding: 11px 20px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #f5dab5;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+
+#container ul ul li a:hover {
+  background: #c9873e;
+  color: #fff;
+  padding-left: 28px;
+}
+
+/* ===== ROUTER OUTLET AREA ===== */
+router-outlet + * {
+  display: block;
+  animation: fadeUp 0.4s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

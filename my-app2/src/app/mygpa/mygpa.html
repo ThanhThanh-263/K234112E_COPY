@@ -1,0 +1,31 @@
+<p>MY GPA CALCULATOR</p>
+<table>
+    <tr>
+        <td>Điểm quá trình</td>
+        <td>
+            <input type="number" #input_diem_qua_trinh>
+        </td>
+    </tr>
+    <tr>
+        <td>Điểm giữa kỳ</td>
+        <td>
+            <input type="number" #input_diem_giua_ky>
+        </td>
+    </tr>
+    <tr>
+        <td>Điểm cuối kỳ</td>
+        <td>
+            <input type="number" #input_diem_cuoi_ky>
+        </td>
+    </tr>
+     <tr>
+        <td>Result:</td>
+        <td #result></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button (click)="get_gpa(input_diem_qua_trinh.value,input_diem_giua_ky.value,input_diem_cuoi_ky.value,result)">Get gpa</button>
+            <button (click)="clear_data(input_diem_qua_trinh,input_diem_giua_ky,input_diem_cuoi_ky,result)">Clear</button>
+        </td>
+    </tr>
+</table>

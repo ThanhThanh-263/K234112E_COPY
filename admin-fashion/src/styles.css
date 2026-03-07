@@ -1,0 +1,114 @@
+/* ================================================
+   ANGULAR-EDITOR GLOBAL OVERRIDE
+   Dán vào styles.css (global)
+   ================================================ */
+
+/* Outer wrapper */
+.angular-editor {
+  border: 1px solid #c5b9b0 !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.angular-editor:focus-within {
+  border-color: #C0211A !important;
+  box-shadow: 0 0 0 3px rgba(192, 33, 26, 0.08) !important;
+}
+
+/* ── TOOLBAR ── */
+.angular-editor-toolbar {
+  background: #f2ede4 !important;
+  border: none !important;
+  border-bottom: 1px solid #c5b9b0 !important;
+  padding: 6px 10px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 2px !important;
+}
+
+.angular-editor-toolbar-set {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 1px !important;
+  margin: 0 2px !important;
+}
+
+/* Toolbar buttons */
+.angular-editor-toolbar-set .angular-editor-button {
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  color: #4a3c36 !important;
+  border-radius: 2px !important;
+  width: 26px !important;
+  height: 26px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.8rem !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  padding: 0 !important;
+}
+
+.angular-editor-toolbar-set .angular-editor-button:hover {
+  background: rgba(192, 33, 26, 0.1) !important;
+  border-color: rgba(192, 33, 26, 0.25) !important;
+  color: #C0211A !important;
+}
+
+.angular-editor-toolbar-set .angular-editor-button.active {
+  background: #C0211A !important;
+  border-color: #C0211A !important;
+  color: #f2ede4 !important;
+}
+
+/* ── SELECTS (font, heading, size) ── */
+.angular-editor-toolbar select,
+select.select-heading,
+select.select-font,
+select.select-font-size {
+  background: #faf7f2 !important;
+  color: #1a1210 !important;
+  border: 1px solid #c5b9b0 !important;
+  border-radius: 2px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.72rem !important;
+  height: 26px !important;
+  padding: 0 4px !important;
+  vertical-align: middle !important;
+  cursor: pointer !important;
+  outline: none !important;
+}
+
+.angular-editor-toolbar select:focus,
+select.select-heading:focus,
+select.select-font:focus,
+select.select-font-size:focus {
+  border-color: #C0211A !important;
+}
+
+/* ── EDITABLE AREA ── */
+.angular-editor-wrapper {
+  background: #faf7f2 !important;
+}
+
+.angular-editor-textarea {
+  background: #faf7f2 !important;
+  border: none !important;
+  color: #1a1210 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.92rem !important;
+  line-height: 1.8 !important;
+  padding: 1rem 1.25rem !important;
+  min-height: 160px !important;
+  outline: none !important;
+}
+
+/* Placeholder */
+.angular-editor-textarea:empty::before {
+  color: #9a8880 !important;
+  font-style: italic !important;
+  font-size: 0.88rem !important;
+}

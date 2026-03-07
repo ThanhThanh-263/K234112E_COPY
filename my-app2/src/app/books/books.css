@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* ===== PAGE WRAPPER ===== */
+:host {
+  display: block;
+  background-color: #f5f0e8;
+  min-height: 100vh;
+  padding: 48px 32px;
+  font-family: 'Crimson Pro', Georgia, serif;
+  color: #2c1f0f;
+}
+
+/* ===== "books works!" paragraph ===== */
+p {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4a2c0a;
+  margin-bottom: 6px;
+}
+
+/* ===== Error message ===== */
+/* {{errMessage}} renders as text node — wrap in a span or p if needed */
+
+/* ===== New Book Link ===== */
+a[routerLink] {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #4a2c0a;
+  color: #f5f0e8;
+  text-decoration: none;
+  padding: 10px 24px;
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  border: 1.5px solid #4a2c0a;
+  margin-bottom: 28px;
+  transition: background 0.25s ease, color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+a[routerLink]:hover {
+  background: #c9873e;
+  border-color: #c9873e;
+  color: #fff;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fffdf7;
+  border: 1px solid #d4b896;
+  box-shadow:
+    4px 4px 0px #d4b896,
+    8px 8px 0px rgba(139, 99, 64, 0.15);
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== HEADER ROW (first <tr> outside tbody) ===== */
+table > tr:first-child {
+  background: #4a2c0a;
+}
+table > tr:first-child td {
+  padding: 16px 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.78rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #f5dab5;
+  font-weight: 400;
+  border: none;
+}
+
+/* ===== TBODY ===== */
+tbody tr {
+  border-bottom: 1px solid #e8dcc8;
+  transition: background 0.2s ease;
+  animation: rowIn 0.4s ease both;
+}
+tbody tr:nth-child(even) {
+  background: #faf6ee;
+}
+tbody tr:hover {
+  background: #fdf0d8;
+}
+
+@keyframes rowIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+tbody tr:nth-child(1) { animation-delay: 0.05s; }
+tbody tr:nth-child(2) { animation-delay: 0.10s; }
+tbody tr:nth-child(3) { animation-delay: 0.15s; }
+tbody tr:nth-child(4) { animation-delay: 0.20s; }
+tbody tr:nth-child(5) { animation-delay: 0.25s; }
+
+/* ===== ALL BODY CELLS ===== */
+tbody td {
+  padding: 14px 20px;
+  vertical-align: middle;
+  font-size: 1.05rem;
+  color: #2c1f0f;
+  border: none;
+}
+
+/* BookId column */
+tbody td:nth-child(1) {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  color: #8b6340;
+  letter-spacing: 1px;
+  width: 90px;
+}
+
+/* BookName column */
+tbody td:nth-child(2) {
+  font-size: 1.1rem;
+}
+
+/* Price column */
+tbody td:nth-child(3) {
+  font-family: 'Playfair Display', serif;
+  color: #4a2c0a;
+  white-space: nowrap;
+}
+
+/* Image column */
+tbody td:nth-child(4) img {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid #d4b896;
+  box-shadow: 2px 2px 6px rgba(74, 44, 10, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+tbody td:nth-child(4) img:hover {
+  transform: scale(1.1) rotate(-1.5deg);
+  box-shadow: 4px 6px 16px rgba(74, 44, 10, 0.3);
+}
+
+/* Action column */
+tbody td:nth-child(5) {
+  white-space: nowrap;
+}
+tbody td:nth-child(5) a {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 2px 0;
+  position: relative;
+  transition: color 0.2s;
+}
+tbody td:nth-child(5) a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  transition: width 0.25s ease;
+}
+tbody td:nth-child(5) a:hover::after {
+  width: 100%;
+}
+
+/* Edit link */
+tbody td:nth-child(5) a:first-child {
+  color: #3a6e4a;
+}
+tbody td:nth-child(5) a:first-child::after {
+  background: #3a6e4a;
+}
+
+/* Delete link */
+tbody td:nth-child(5) a:last-child {
+  color: #a83225;
+}
+tbody td:nth-child(5) a:last-child::after {
+  background: #a83225;
+}

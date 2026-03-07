@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+/* ================= RESET ================= */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+  font-family: 'Crimson Pro', Georgia, serif;
+  background-color: #f5f0e8;
+  background-image:
+    radial-gradient(ellipse at 15% 40%, rgba(180, 140, 100, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 70%, rgba(120, 80, 40, 0.07) 0%, transparent 50%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  color: #2c1f0f;
+}
+
+/* ================= WRAPPER ================= */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= ORNAMENTS ================= */
+.ornament {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  letter-spacing: 10px;
+  color: #c9873e;
+  opacity: 0.6;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: #fffdf7;
+  border: 1px solid #d4b896;
+  box-shadow:
+    4px 4px 0px #d4b896,
+    10px 10px 0px rgba(139, 99, 64, 0.12);
+  padding: 56px 64px;
+  text-align: center;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+}
+
+/* top-left corner accent */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 28px;
+  height: 28px;
+  border-top: 2px solid #c9873e;
+  border-left: 2px solid #c9873e;
+}
+/* bottom-right corner accent */
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border-bottom: 2px solid #c9873e;
+  border-right: 2px solid #c9873e;
+}
+
+/* ================= 404 CODE ================= */
+.code {
+  font-family: 'Playfair Display', serif;
+  font-size: 7rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #4a2c0a;
+  letter-spacing: -4px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+.code::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px #c9873e;
+  opacity: 0.15;
+  transform: translate(4px, 4px);
+  pointer-events: none;
+}
+
+/* ================= DIVIDER ================= */
+.divider {
+  width: 60px;
+  height: 2px;
+  background: #8b6340;
+  margin: 0 auto 20px;
+  position: relative;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9873e;
+}
+.divider::before { left: -10px; }
+.divider::after  { right: -10px; }
+
+/* ================= TITLE ================= */
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #4a2c0a;
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+}
+
+/* ================= SUBTITLE ================= */
+.subtitle {
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #8b6340;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+/* ================= MESSAGE ================= */
+.message {
+  font-size: 1.05rem;
+  color: #5a4030;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 36px;
+}
+
+/* ================= BUTTON ================= */
+.btn-home {
+  display: inline-block;
+  background: #4a2c0a;
+  color: #f5dab5;
+  text-decoration: none;
+  padding: 12px 32px;
+  font-family: 'Crimson Pro', serif;
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  border: 1.5px solid #4a2c0a;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+.btn-home:hover {
+  background: #c9873e;
+  border-color: #c9873e;
+  color: #fff;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 480px) {
+  .card {
+    padding: 40px 28px;
+  }
+  .code {
+    font-size: 5rem;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+}

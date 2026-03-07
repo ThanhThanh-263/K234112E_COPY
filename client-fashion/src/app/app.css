@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,400;1,700;1,900&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ================================================
+   GLOBAL APP STYLES — Cherie Editorial
+   ================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:host {
+  --color-primary: #c0211a;
+  --color-dark: #1a1210;
+  --color-light: #f2ede4;
+  --color-neutral: #999;
+  --color-border: #c5b9b0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'DM Sans', sans-serif;
+  color: #1a1210;
+  background: #f2ede4;
+  overflow-x: hidden;
+}
+
+router-outlet {
+  display: block;
+}
+
+/* ================================================
+   SCROLLBAR STYLING
+   ================================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2ede4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0211a;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a1210;
+}
+
+/* ================================================
+   SELECTION STYLING
+   ================================================ */
+
+::selection {
+  background: #c0211a;
+  color: #f2ede4;
+}

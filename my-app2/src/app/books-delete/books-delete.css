@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* ===== PAGE WRAPPER ===== */
+:host {
+    display: block;
+    background-color: #f5f0e8;
+    min-height: 100vh;
+    padding: 48px 32px;
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: #2c1f0f;
+    box-sizing: border-box;
+}
+
+/* ===== TITLE ===== */
+p:first-of-type {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #4a2c0a;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-left: 5px solid #a83225;
+    padding-left: 16px;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+/* ===== ERROR MESSAGE ===== */
+p:last-of-type {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #a83225;
+    margin-bottom: 24px;
+    min-height: 1.2em;
+    padding-left: 21px;
+}
+
+/* ===== DELETE BAR ===== */
+.delete-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 32px;
+    animation: fadeUp 0.5s ease both;
+}
+
+/* ===== INLINE LABEL ===== */
+label,
+.delete-bar > *:not(input):not(button) {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8b6340;
+    white-space: nowrap;
+}
+
+/* ===== DELETE INPUT ===== */
+input[type="text"] {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    padding: 9px 14px;
+    border: 1.5px solid #d4b896;
+    background: #fffdf7;
+    color: #2c1f0f;
+    outline: none;
+    flex: 1;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    box-shadow: inset 0 1px 3px rgba(74, 44, 10, 0.06);
+}
+
+input[type="text"]:focus {
+    border-color: #a83225;
+    background: #fff;
+    box-shadow: inset 0 1px 3px rgba(168, 50, 37, 0.08), 0 0 0 2px rgba(168, 50, 37, 0.08);
+}
+
+input[type="text"]::placeholder {
+    color: #b89870;
+    font-style: italic;
+}
+
+/* ===== DELETE BUTTON ===== */
+button {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    font-style: italic;
+    letter-spacing: 1px;
+    padding: 10px 28px;
+    background: #a83225;
+    color: #fdf5f4;
+    border: 1.5px solid #a83225;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+button:hover {
+    background: #7a2019;
+    border-color: #7a2019;
+    color: #fff;
+}
+
+button:active {
+    background: #5c1612;
+    border-color: #5c1612;
+}
+
+/* ===== LIST TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fffdf7;
+    border: 1px solid #d4b896;
+    box-shadow:
+        4px 4px 0px #d4b896,
+        8px 8px 0px rgba(139, 99, 64, 0.15);
+    animation: fadeUp 0.5s ease both;
+    animation-delay: 0.15s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== TABLE HEADER ROW ===== */
+table thead tr {
+    background: #a83225;
+}
+
+table thead tr td {
+    padding: 14px 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #fdf5f4;
+    font-weight: 400;
+    border: none;
+}
+
+/* ===== TABLE BODY ROWS ===== */
+table tbody tr {
+    border-bottom: 1px solid #e8dcc8;
+    transition: background 0.2s ease;
+    animation: rowIn 0.4s ease both;
+}
+
+table tbody tr:nth-child(even) {
+    background: #faf6ee;
+}
+
+table tbody tr:hover {
+    background: #fde8e6;
+}
+
+table tbody tr:last-child {
+    border-bottom: none;
+}
+
+table tbody tr:nth-child(1) { animation-delay: 0.05s; }
+table tbody tr:nth-child(2) { animation-delay: 0.10s; }
+table tbody tr:nth-child(3) { animation-delay: 0.15s; }
+table tbody tr:nth-child(4) { animation-delay: 0.20s; }
+table tbody tr:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes rowIn {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== TABLE BODY CELLS ===== */
+table tbody td {
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: #2c1f0f;
+    vertical-align: middle;
+    border: none;
+}
+
+/* BookId column */
+table tbody td:nth-child(1) {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.82rem;
+    color: #8b6340;
+    letter-spacing: 1px;
+    width: 90px;
+}
+
+/* BookName column */
+table tbody td:nth-child(2) {
+    font-size: 1.05rem;
+}
+
+/* Price column */
+table tbody td:nth-child(3) {
+    font-family: 'Playfair Display', serif;
+    color: #4a2c0a;
+    white-space: nowrap;
+}
+
+/* Image column */
+table tbody td:nth-child(4) img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid #d4b896;
+    box-shadow: 2px 2px 6px rgba(74, 44, 10, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+table tbody td:nth-child(4) img:hover {
+    transform: scale(1.1) rotate(-1.5deg);
+    box-shadow: 4px 6px 16px rgba(168, 50, 37, 0.3);
+}
+
+/* ===== CUSTOM ALERT TOAST ===== */
+.alert-toast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    background: #fffdf7;
+    border: 1px solid #d4b896;
+    border-left: 5px solid #a83225;
+    box-shadow: 3px 3px 0px #d4b896;
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    color: #4a2c0a;
+    animation: slideIn 0.3s ease both;
+}
+
+.alert-toast span {
+    font-style: italic;
+    letter-spacing: 0.3px;
+}
+
+.alert-toast span::before {
+    content: '✦ ';
+    color: #a83225;
+    font-style: normal;
+    font-size: 0.75rem;
+}
+
+.alert-close {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.85rem;
+    font-style: normal;
+    padding: 2px 8px;
+    background: transparent;
+    color: #8b6340;
+    border: 1px solid #d4b896;
+    cursor: pointer;
+    box-shadow: none;
+    flex-shrink: 0;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.alert-close:hover {
+    background: #a83225;
+    border-color: #a83225;
+    color: #fff;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* ===== PAGE WRAPPER ===== */
+:host {
+  display: block;
+  background-color: #f5f0e8;
+  min-height: 100vh;
+  padding: 48px 32px;
+  font-family: 'Crimson Pro', Georgia, serif;
+  color: #2c1f0f;
+  box-sizing: border-box;
+}
+
+/* ===== INNER CONTENT WRAPPER ===== */
+.detail-wrap {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ===== TITLE "book-detail works!" ===== */
+p:first-of-type {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #4a2c0a;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-left: 5px solid #c9873e;
+  padding-left: 16px;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+/* ===== Error message ===== */
+p:last-of-type {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #a83225;
+  margin-bottom: 24px;
+  min-height: 1.2em;
+  padding-left: 21px;
+}
+
+/* ===== SEARCH ROW ===== */
+.search-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 28px;
+  width: 100%;
+  border: 1.5px solid #d4b896;
+  overflow: hidden;
+  box-shadow: 3px 3px 0px #d4b896;
+}
+
+.search-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.72rem;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #fffdf7;
+  background: #8b6340;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  border-right: 1.5px solid #d4b896;
+  flex-shrink: 0;
+}
+
+input[type="text"] {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  padding: 11px 16px;
+  border: none;
+  background: #fffdf7;
+  color: #2c1f0f;
+  outline: none;
+  flex: 1;
+  min-width: 0;
+}
+input[type="text"]:focus {
+  background: #fff8ee;
+}
+input[type="text"]::placeholder {
+  color: #b89870;
+  font-style: italic;
+}
+
+button {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  letter-spacing: 1px;
+  padding: 11px 22px;
+  background: #4a2c0a;
+  color: #f5dab5;
+  border: none;
+  border-left: 1.5px solid #d4b896;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+button:hover {
+  background: #c9873e;
+  color: #fff;
+}
+button:active {
+  background: #3a2008;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fffdf7;
+  border: 1px solid #d4b896;
+  box-shadow:
+    4px 4px 0px #d4b896,
+    8px 8px 0px rgba(139, 99, 64, 0.15);
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== ALL ROWS ===== */
+tr {
+  border-bottom: 1px solid #e8dcc8;
+  animation: rowIn 0.4s ease both;
+  transition: background 0.2s ease;
+}
+tr:last-child {
+  border-bottom: none;
+}
+tr:hover {
+  background: #fdf0d8;
+}
+
+tr:nth-child(1) { animation-delay: 0.05s; }
+tr:nth-child(2) { animation-delay: 0.10s; }
+tr:nth-child(3) { animation-delay: 0.15s; }
+tr:nth-child(4) { animation-delay: 0.20s; }
+
+@keyframes rowIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== LABEL CELLS ===== */
+td:first-child {
+  padding: 14px 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8b6340;
+  font-weight: 400;
+  width: 130px;
+  vertical-align: middle;
+}
+
+/* ===== VALUE CELLS ===== */
+td:last-child {
+  padding: 14px 20px;
+  font-size: 1.05rem;
+  color: #2c1f0f;
+  vertical-align: middle;
+}
+
+/* BookId value */
+tr:nth-child(1) td:last-child {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  color: #8b6340;
+  letter-spacing: 1px;
+}
+
+/* BookName value */
+tr:nth-child(2) td:last-child {
+  font-size: 1.1rem;
+  font-family: 'Crimson Pro', serif;
+}
+
+/* Price value */
+tr:nth-child(3) td:last-child {
+  font-family: 'Playfair Display', serif;
+  color: #4a2c0a;
+  white-space: nowrap;
+}
+
+/* ===== IMAGE ROW ===== */
+tr:last-child td[colspan="2"] {
+  padding: 20px;
+  text-align: center;
+}
+tr:last-child td[colspan="2"] img {
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+  display: inline-block;
+  border: 1px solid #d4b896;
+  box-shadow: 2px 2px 6px rgba(74, 44, 10, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+tr:last-child td[colspan="2"] img:hover {
+  transform: scale(1.08) rotate(-1.5deg);
+  box-shadow: 6px 10px 24px rgba(74, 44, 10, 0.3);
+}

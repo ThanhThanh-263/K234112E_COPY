@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,400;1,700;1,900&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ================================================
+   CHERIE EDITORIAL — fashion.component.css
+   Dùng tag selectors (không dùng class) để Angular
+   ViewEncapsulation không chặn style
+   ================================================ */
+
+:host {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  color: #1a1210;
+  background: #f2ede4;
+  min-height: 100vh;
+}
+
+/* ================================================
+   VIEW MODE — div đầu tiên chứa .hero
+   ================================================ */
+
+/* Hero wrapper — div đầu trong page-view */
+:host > div > div:first-child {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+  background: #1a1210;
+}
+
+/* Hero image */
+:host > div > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.72) contrast(1.08);
+  transition: transform 0.9s ease;
+  max-height: unset;
+  margin: 0;
+  box-shadow: none;
+  padding: 0;
+  border: none;
+}
+
+:host > div > div:first-child:hover img {
+  transform: scale(1.03);
+}
+
+/* Overlay div */
+:host > div > div:first-child > div {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(26,18,16,0.1) 0%, rgba(26,18,16,0.6) 100%);
+  pointer-events: none;
+}
+
+/* Eyebrow span */
+:host > div > div:first-child > span {
+  position: absolute;
+  top: 2rem;
+  left: 2.5rem;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(242,237,228,0.9);
+  background: rgba(192,33,26,0.85);
+  padding: 0.3rem 0.9rem;
+  backdrop-filter: blur(4px);
+}
+
+/* BIG SCRIPT TITLE on hero */
+:host > div > div:first-child h1 {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  font-style: italic;
+  color: #f2ede4;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 8px 32px rgba(0,0,0,0.2);
+  animation: titleIn 0.8s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+@keyframes titleIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================================
+   CREAM SECTION (view mode)
+   ================================================ */
+
+/* Cream wrapper div */
+:host > div > div:nth-child(2) {
+  background: #f2ede4;
+  padding: 3.5rem 3rem 4rem;
+  animation: fadeUp 0.55s cubic-bezier(0.16,1,0.3,1) 0.15s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* cream-inner */
+:host > div > div:nth-child(2) > div {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* section eyebrow p */
+:host > div > div:nth-child(2) > div > p {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #C0211A;
+  margin-bottom: 1.75rem;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.4;
+}
+
+/* cream-grid */
+:host > div > div:nth-child(2) > div > div {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* meta labels (strong tags render as p > strong) */
+:host > div > div:nth-child(2) p strong,
+:host > div > div:nth-child(2) p:not(:first-child) {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* All p inside cream-left/right */
+:host > div > div:nth-child(2) > div > div p {
+  line-height: 1.4;
+  margin: 0 0 0.25rem;
+}
+
+/* ================================================
+   SHARED: h2 heading (edit mode banner fallback)
+   ================================================ */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  font-style: italic;
+  color: #f2ede4;
+  margin: 0;
+  line-height: 1;
+}
+
+/* ================================================
+   EDIT HERO BANNER
+   ================================================ */
+.edit-hero {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background: #C0211A;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.edit-hero span {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(242,237,228,0.75);
+  background: rgba(255,255,255,0.15);
+  padding: 0.3rem 0.9rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.edit-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  font-style: italic;
+  color: #f2ede4;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.2);
+  animation: titleIn 0.8s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+/* ================================================
+   FORM SECTION
+   ================================================ */
+.cream-section {
+  background: #f2ede4;
+  padding: 3.5rem 3rem 4rem;
+  animation: fadeUp 0.55s cubic-bezier(0.16,1,0.3,1) 0.15s both;
+}
+
+.cream-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ── FORM LAYOUT ── */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── LABELS ── */
+label {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #9a8880;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── TEXT INPUTS ── */
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #1a1210;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #c5b9b0;
+  padding: 0.6rem 0.1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  border-radius: 0;
+}
+
+input[type="text"]:focus {
+  border-bottom-color: #C0211A;
+}
+
+/* ── FILE INPUT ── */
+input[type="file"] {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: #9a8880;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f2ede4;
+  background: #C0211A;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  margin-right: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: #8b1510;
+}
+
+/* ── UPLOAD ROW ── */
+.upload-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1.5px solid #c5b9b0;
+}
+
+/* Thumbnail preview — Polaroid */
+.thumb-preview {
+  width: 72px !important;
+  height: 88px !important;
+  max-height: 88px !important;
+  object-fit: cover !important;
+  display: block !important;
+  background: #fff !important;
+  padding: 5px 5px 18px !important;
+  box-shadow: 0 2px 8px rgba(26,18,16,0.15), 0 6px 20px rgba(26,18,16,0.1) !important;
+  transform: rotate(-2deg) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.thumb-preview:hover {
+  transform: rotate(0deg) scale(1.05) !important;
+  box-shadow: 0 8px 28px rgba(26,18,16,0.22) !important;
+}
+
+/* ── HR ── */
+hr {
+  border: none;
+  border-top: 1px solid #ddd5cc;
+  margin: 0.5rem 0 1.5rem;
+}
+
+/* ── FORM ACTIONS ── */
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Submit button */
+button[type="submit"] {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #f2ede4;
+  background: #C0211A;
+  border: none;
+  padding: 0.8rem 2.2rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 18px rgba(192,33,26,0.3);
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background: #8b1510;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(192,33,26,0.4);
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Cancel / back button */
+button[type="button"],
+.btn-outline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9a8880;
+  background: transparent;
+  border: 1px solid #c5b9b0;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+button[type="button"]:hover,
+.btn-outline:hover {
+  border-color: #C0211A;
+  color: #C0211A;
+}
+
+/* ── ANGULAR EDITOR ── */
+angular-editor {
+  display: block;
+  border: 1px solid #c5b9b0 !important;
+  background: #faf7f2;
+}
+
+angular-editor:focus-within {
+  border-color: #C0211A !important;
+  box-shadow: 0 0 0 3px rgba(192,33,26,0.07);
+}
+
+/* ── ERROR ── */
+.error {
+  font-size: 0.82rem;
+  color: #C0211A;
+  background: rgba(192,33,26,0.07);
+  border-left: 3px solid #C0211A;
+  padding: 0.6rem 1rem;
+  margin-top: 1rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ================================================
+   RESPONSIVE
+   ================================================ */
+@media (max-width: 640px) {
+  :host > div > div:first-child { height: 360px; }
+  :host > div > div:first-child h1 { font-size: 2.8rem; left: 1.5rem; right: 1.5rem; bottom: 1.5rem; }
+  :host > div > div:nth-child(2) { padding: 2.5rem 1.5rem 3rem; }
+  :host > div > div:nth-child(2) > div > div { grid-template-columns: 1fr; gap: 2rem; }
+  .cream-section { padding: 2.5rem 1.5rem 3rem; }
+  .form-row { grid-template-columns: 1fr; }
+}

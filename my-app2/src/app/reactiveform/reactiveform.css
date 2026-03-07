@@ -1,0 +1,29 @@
+.register-form {
+  width: 420px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-control {
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+button {
+  min-width: 110px;
+}

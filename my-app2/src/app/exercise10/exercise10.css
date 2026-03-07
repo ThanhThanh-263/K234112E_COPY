@@ -1,0 +1,43 @@
+.box {
+  width: 600px;
+  border: 1px solid #999;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: blue;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: blue;
+  margin: 10px 0;
+}
+
+.input-row {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.input-row select,
+.input-row button {
+  margin: 0 3px;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.result-table td {
+  border: 1px solid #999;
+  padding: 6px;
+}
+
+.result {
+  color: red;
+  font-weight: bold;
+}

@@ -1,0 +1,28 @@
+<h2>QUẢN LÝ THÔNG TIN SÁCH</h2>
+
+<button class="btn-create">Create New</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let b of books">
+      <td>{{ b.title }}</td>
+      <td>{{ b.author }}</td>
+      <td>{{ b.price }}</td>
+      <td>
+        <button>Edit</button>
+        <button>Details</button>
+        <button class="btn-delete" (click)="deleteBook(b.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

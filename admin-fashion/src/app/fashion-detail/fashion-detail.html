@@ -1,0 +1,138 @@
+<!-- ================================================
+     FASHION COMPONENT — Complete HTML Template
+     Pair with: fashion.component.css
+     ================================================ -->
+
+<!-- ── VIEW MODE ── -->
+<div *ngIf="isViewMode && fashion" class="fashion-container fashion-view">
+
+  <!-- Hero Image -->
+  <div class="view-hero">
+    <img [src]="getThumbnailSrc()" alt="{{ fashion.fashion_title }}">
+    <div class="view-hero-overlay"></div>
+    <span class="view-hero-badge">{{ fashion.style }}</span>
+    <h1 class="view-hero-title">{{ fashion.fashion_title }}</h1>
+  </div>
+
+  <!-- Body -->
+  <div class="view-body">
+
+    <!-- Left: Meta -->
+    <div class="view-meta">
+      <div>
+        <p class="meta-label">Style</p>
+        <p class="meta-value">{{ fashion.style }}</p>
+      </div>
+
+      <hr class="view-divider">
+
+      <div>
+        <p class="meta-label">Tiêu đề</p>
+        <p class="meta-value">{{ fashion.fashion_title }}</p>
+      </div>
+    </div>
+
+    <!-- Right: Details -->
+    <div class="view-details-section">
+      <p class="meta-label">Chi tiết</p>
+      <div class="fashion-details-content" [innerHTML]="fashion.fashion_details"></div>
+    </div>
+
+  </div>
+
+  <button class="btn-back" (click)="cancel()">Quay lại</button>
+
+</div>
+
+
+<!-- ── EDIT / ADD MODE ── -->
+<div *ngIf="isEditMode" class="fashion-container fashion-edit">
+
+  <!-- Header -->
+  <div class="edit-header">
+    <span class="edit-header-eyebrow">{{ fashion ? 'Chỉnh sửa' : 'Tạo mới' }}</span>
+    <h2>{{ fashion ? 'Sửa Fashion' : 'Thêm Fashion' }}</h2>
+  </div>
+
+  <!-- Form -->
+  <form [formGroup]="fashionForm" (ngSubmit)="onSubmit()" class="fashion-form">
+
+    <!-- Style -->
+    <div class="form-field">
+      <label for="style">Style</label>
+      <input
+        id="style"
+        type="text"
+        formControlName="style"
+        placeholder="Ví dụ: Streetwear, Haute Couture..."
+      >
+    </div>
+
+    <!-- Tiêu đề -->
+    <div class="form-field">
+      <label for="fashion_title">Tiêu đề</label>
+      <input
+        id="fashion_title"
+        type="text"
+        formControlName="fashion_title"
+        placeholder="Nhập tiêu đề bài viết..."
+      >
+    </div>
+
+    <!-- Chi tiết (rich text) -->
+    <div class="form-field full-width">
+      <label>Chi tiết</label>
+      <angular-editor
+        formControlName="fashion_details"
+        [config]="editorConfig">
+      </angular-editor>
+    </div>
+
+    <!-- Thumbnail upload -->
+    <div class="form-field full-width thumbnail-upload">
+      <label>Ảnh Thumbnail</label>
+      <div class="upload-area">
+        <div class="upload-input-wrapper">
+          <input
+            type="file"
+            (change)="onFileChange($event)"
+            accept="image/*"
+          >
+        </div>
+        <img
+          *ngIf="getThumbnailSrc()"
+          [src]="getThumbnailSrc()"
+          alt="Thumbnail preview"
+          class="thumbnail-preview"
+        >
+      </div>
+    </div>
+
+    <hr class="form-divider">
+
+    <!-- Actions -->
+    <div class="form-actions">
+      <button
+        type="submit"
+        class="btn-primary"
+        [disabled]="fashionForm.invalid"
+      >
+        Lưu
+      </button>
+      <button
+        type="button"
+        class="btn-secondary"
+        (click)="cancel()"
+      >
+        Hủy
+      </button>
+    </div>
+
+    <!-- Error -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+  </form>
+
+</div>

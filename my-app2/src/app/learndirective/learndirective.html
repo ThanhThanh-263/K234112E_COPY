@@ -1,0 +1,61 @@
+<p>learndirective works!</p>
+<button (click)="changeView()">Change view</button>
+<div *ngIf="show_view==1; else view2">
+    <table border="1">
+        <tr>
+            <td>ID:</td>
+            <td>Name:</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Pepsi</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Coca Cola</td>
+        </tr>
+    </table>
+</div>
+<ng-template #view2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>1</th>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <th>Mei</th>
+        </tr>
+    </table>
+
+</ng-template>
+<h1>
+    Learn ngFor
+</h1>
+<h3>
+    List of provinces:
+</h3>
+<p *ngFor="let p of provinces">{{p}}</p>
+<select>
+    <option *ngFor="let p of provinces">{{p}}</option>
+</select>
+<ol>
+    <li *ngFor="let p of provinces">{{p}}</li>
+</ol>
+<h3>ngFor - Products (Object)</h3>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prod of products">
+            <td>{{prod.id}}</td>
+            <td>{{prod.name}}</td>
+            <td>{{prod.price}}</td>
+        </tr>
+    </tbody>
+</table>

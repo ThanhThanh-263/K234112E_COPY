@@ -1,0 +1,156 @@
+<div class="form-wrapper">
+  <form #registerForm="ngForm">
+    <h4 class="title">Đăng ký khóa học</h4>
+
+    <!-- TÊN -->
+    <div class="form-row">
+      <label>Tên</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        placeholder="Nhập tên của bạn"
+        [(ngModel)]="studentModel.name"
+        #name="ngModel"
+        required
+        [class.is-invalid]="name.invalid && name.touched"
+      />
+      <small
+        class="text-danger"
+        *ngIf="name.invalid && name.touched"
+      >
+        Bạn chưa nhập tên
+      </small>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="form-row">
+      <label>Email</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        placeholder="Nhập địa chỉ email của bạn"
+        [(ngModel)]="studentModel.email"
+        #email="ngModel"
+        required
+        email
+        [class.is-invalid]="email.invalid && email.touched"
+      />
+
+      <small
+        class="text-danger"
+        *ngIf="email.touched && email.errors?.['required']"
+      >
+        Bạn chưa nhập email
+      </small>
+
+      <small
+        class="text-danger"
+        *ngIf="email.touched && email.errors?.['email']"
+      >
+        Email không hợp lệ
+      </small>
+    </div>
+
+    <!-- ĐIỆN THOẠI -->
+    <div class="form-row">
+      <label>Điện thoại</label>
+      <input
+        type="text"
+        class="form-control"
+        name="phone"
+        [(ngModel)]="studentModel.phone"
+      />
+    </div>
+
+    <!-- KHÓA HỌC -->
+    <div class="form-row">
+      <label>Khóa học</label>
+
+      <select
+        class="form-control"
+        name="course"
+        [(ngModel)]="studentModel.course"
+        #course="ngModel"
+        [class.is-invalid]="errFlag && course.touched"
+        (change)="validateCourse(course.value)"
+        (blur)="validateCourse(course.value)"
+      >
+        <option value="none">-----</option>
+        <option *ngFor="let c of courses" [value]="c">
+          {{ c }}
+        </option>
+      </select>
+
+      <small
+        class="text-danger"
+        *ngIf="errFlag && course.touched"
+      >
+        Vui lòng chọn khóa học
+      </small>
+    </div>
+
+    <!-- CA HỌC -->
+    <div class="form-row">
+      <label>Ca học</label>
+      <div class="radio-group">
+        <label>
+          <input
+            type="radio"
+            name="time"
+            value="sáng"
+            [(ngModel)]="studentModel.time"
+          />
+          Sáng
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="time"
+            value="tối"
+            [(ngModel)]="studentModel.time"
+          />
+          Tối
+        </label>
+      </div>
+    </div>
+
+    <!-- ĐỒNG Ý ĐIỀU KHOẢN -->
+    <div class="form-row">
+      <label>
+        <input
+          type="checkbox"
+          name="agree"
+          [(ngModel)]="studentModel.agree"
+          #agree="ngModel"
+          required
+        />
+        Đồng ý với điều khoản
+      </label>
+
+      <small
+        class="text-danger"
+        *ngIf="agree.invalid && agree.touched"
+      >
+        Bạn phải đồng ý với điều khoản
+      </small>
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="form-row center">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="registerForm.invalid || errFlag || !studentModel.agree"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+
+  <!-- DEBUG DATA -->
+  <pre>{{ studentModel | json }}</pre>
+</div>
+
