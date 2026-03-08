@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap');
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f0e8;
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: #2c1f0f;
+    box-sizing: border-box;
+    padding: 48px 32px;
+}
+
+/* ===== CONTAINER ===== */
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    background: #fffdf7;
+    border: 1.5px solid #d4b896;
+    box-shadow:
+        4px 4px 0px #d4b896,
+        8px 8px 0px rgba(139, 99, 64, 0.15);
+    padding: 40px 36px 32px;
+    animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== TITLE ===== */
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #4a2c0a;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-left: 5px solid #c9873e;
+    padding-left: 16px;
+    margin: 0 0 28px 0;
+    line-height: 1.2;
+}
+
+/* ===== FORM FIELDS ===== */
+form div {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 16px;
+    border: 1.5px solid #d4b896;
+    overflow: hidden;
+    box-shadow: 3px 3px 0px #d4b896;
+}
+
+label {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.72rem;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #fffdf7;
+    background: #8b6340;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    border-right: 1.5px solid #d4b896;
+    flex-shrink: 0;
+}
+
+input[type="text"],
+input[type="password"] {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    padding: 11px 16px;
+    border: none;
+    background: #fffdf7;
+    color: #2c1f0f;
+    outline: none;
+    flex: 1;
+    min-width: 0;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background: #fff8ee;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #b89870;
+    font-style: italic;
+}
+
+/* ===== ERROR ===== */
+.error {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #a83225;
+    margin-bottom: 8px;
+    padding-left: 4px;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* ===== BUTTON ===== */
+button[type="submit"] {
+    width: 100%;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    letter-spacing: 1px;
+    padding: 12px 22px;
+    background: #4a2c0a;
+    color: #f5dab5;
+    border: 1.5px solid #d4b896;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease;
+    margin-top: 8px;
+    box-shadow: 3px 3px 0px #d4b896;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    background: #c9873e;
+    color: #fff;
+}
+
+button[type="submit"]:active {
+    background: #3a2008;
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ===== REGISTER LINK ===== */
+p {
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #8b6340;
+    margin-top: 20px;
+    text-align: center;
+}
+
+p a {
+    color: #4a2c0a;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+p a:hover {
+    color: #c9873e;
+}

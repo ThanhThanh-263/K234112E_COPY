@@ -23,8 +23,12 @@ import { BooksNew } from './books-new/books-new';
 import { BooksUpdate } from './books-update/books-update';
 import { BooksDelete } from './books-delete/books-delete';
 import { Fashion } from './fashion/fashion';
-
+import { Login } from './login/login';
+import { Register } from './register/register';
 const routes: Routes = [
+  { path: "", redirectTo: 'login', pathMatch: 'full' },
+  { path: 'register', component: Register },
+  { path: 'login', component: Login },
   { path: 'gioi-thieu', component: About },
   { path: 'sanpham1', component: Listproduct1 },
   { path: 'sanpham2', component: Listproduct2 },
@@ -35,25 +39,29 @@ const routes: Routes = [
 
   { path: 'list-customer-service', component: Listcustomerservicer },
   { path: 'list-customer-service/:id', component: Customerdetail },
-  {path:'product',component:ProductComponent},
-  {path:'product',component:ListProductComponent},
-  {path:'product',component:ServiceProductComponent},
-  {path:'service-product-image-event',
-  component:ServiceProductImageEvent},
-  {path:'service-product-image-event/:id',
-  component:ServiceProductImageEventDetail},
-  {path:'student-form',component:Form},
-  {path:'reactive-form',component:Reactiveform},
-  {path:'ex26',component:FakeProductComponent},
-  {path: 'ex39', component: Books},
-  {path: 'ex41', component: BooksDetail},
-  {path: 'ex41/:id', component: BooksDetail},
-  {path: 'ex43', component: BooksNew},
-  {path: 'ex45', component: BooksUpdate},
-  {path: 'ex45/:id', component: BooksUpdate},
-  {path: 'ex47', component: BooksDelete},
-  {path: 'ex47/:id', component: BooksDelete},
-  {path: 'ex53', component: Fashion},
+  { path: 'product', component: ProductComponent },
+  { path: 'product', component: ListProductComponent },
+  { path: 'product', component: ServiceProductComponent },
+  {
+    path: 'service-product-image-event',
+    component: ServiceProductImageEvent
+  },
+  {
+    path: 'service-product-image-event/:id',
+    component: ServiceProductImageEventDetail
+  },
+  { path: 'student-form', component: Form },
+  { path: 'reactive-form', component: Reactiveform },
+  { path: 'ex26', component: FakeProductComponent },
+  { path: 'ex39', component: Books },
+  { path: 'ex41', component: BooksDetail },
+  { path: 'ex41/:id', component: BooksDetail },
+  { path: 'ex43', component: BooksNew },
+  { path: 'ex45', component: BooksUpdate },
+  { path: 'ex45/:id', component: BooksUpdate },
+  { path: 'ex47', component: BooksDelete },
+  { path: 'ex47/:id', component: BooksDelete },
+  { path: 'ex53', component: Fashion },
   { path: '**', component: Pagenotfound },
 ];
 

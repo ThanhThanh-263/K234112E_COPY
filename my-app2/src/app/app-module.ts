@@ -34,6 +34,8 @@ import { BooksDetail } from './books-detail/books-detail';
 import { BooksUpdate } from './books-update/books-update';
 import { BooksDelete } from './books-delete/books-delete';
 import { Fashion } from './fashion/fashion';
+import { Login } from './login/login';
+import { Register } from './register/register';
 
 
 @NgModule({
@@ -66,7 +68,9 @@ import { Fashion } from './fashion/fashion';
     BooksDetail,
     BooksUpdate,
     BooksDelete,
-    Fashion
+    Fashion,
+    Login,
+    Register
     
   
   
