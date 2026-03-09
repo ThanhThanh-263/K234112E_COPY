@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Diamond Promise Ring Round-cut 10K White Gold",
+        "price": 317,
+        "image": "assets/cart/cart1.png",
+        "description": "Elegant round-cut diamond promise ring crafted in 10K white gold with a brilliant cluster design.",
+        "category": "Rings"
+    },
+    {
+        "name": "Diamond Promise Ring Round/Baguette 10K White Gold",
+        "price": 421,
+        "image": "assets/cart/cart2.png",
+        "description": "Luxury promise ring featuring round and baguette diamonds set in polished white gold.",
+        "category": "Rings"
+    },
+    {
+        "name": "Black Diamond Promise Ring Sterling Silver",
+        "price": 259,
+        "image": "assets/cart/cart3.png",
+        "description": "Stylish sterling silver ring with a bold black diamond center and sparkling accents.",
+        "category": "Rings"
+    },
+    {
+        "name": "Diamond Promise Ring Round-cut Sterling Silver",
+        "price": 287,
+        "image": "assets/cart/cart4.png",
+        "description": "Classic round-cut diamond promise ring in sterling silver with elegant side stones.",
+        "category": "Rings"
+    },
+    {
+        "name": "Heart Diamond Promise Ring Sterling Silver",
+        "price": 365,
+        "image": "assets/cart/cart5.png",
+        "description": "Romantic heart-shaped diamond ring crafted in polished sterling silver.",
+        "category": "Rings"
+    },
+    {
+        "name": "Diamond Promise Ring Twisted Band Silver",
+        "price": 233,
+        "image": "assets/cart/cart6.png",
+        "description": "Modern diamond ring with a twisted band design for a stylish and elegant appearance.",
+        "category": "Rings"
+    }
+]

@@ -1,0 +1,34 @@
+<div class="cart">
+  <h2>Your Cart</h2>
+  <p class="message" *ngIf="message">{{ message }}</p>
+  <div *ngIf="cart.length; else empty">
+    <div class="cart-item" *ngFor="let item of cart">
+      <input type="checkbox" [(ngModel)]="item.remove" />
+      <!-- specify dimensions to avoid NG0913 warning -->
+      <img [src]="'/' + item.image" alt="{{item.name}}" width="100" height="100" style="object-fit:cover;" />
+      <div class="details">
+        <h3>{{ item.name }}</h3>
+        <p>Price: {{ item.price | currency }}</p>
+        <p>
+          Quantity: <input
+            type="number"
+            [(ngModel)]="item.quantity"
+            min="1" />
+        </p>
+        <!-- line total recalculates automatically when quantity changes -->
+        <p><strong>Line total:</strong> {{ (item.price * item.quantity) | currency }}</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button (click)="updateCart()">Update shopping cart</button>
+    </div>
+    <!-- overall total -->
+    <div class="cart-total" *ngIf="cart.length">
+      <p><strong>Total:</strong> {{ total | currency }}</p>
+    </div>
+  </div>
+  <ng-template #empty>
+    <p>Your cart is empty.</p>
+  </ng-template>
+  <p><a routerLink="/ex63">Continue shopping</a></p>
+</div>

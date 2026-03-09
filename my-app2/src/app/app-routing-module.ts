@@ -25,6 +25,8 @@ import { BooksDelete } from './books-delete/books-delete';
 import { Fashion } from './fashion/fashion';
 import { Login } from './login/login';
 import { Register } from './register/register';
+import { Cart } from './cart/cart';
+import { Exercise63 } from './exercise63/exercise63';
 const routes: Routes = [
   { path: "", redirectTo: 'login', pathMatch: 'full' },
   { path: 'register', component: Register },
@@ -62,6 +64,8 @@ const routes: Routes = [
   { path: 'ex47', component: BooksDelete },
   { path: 'ex47/:id', component: BooksDelete },
   { path: 'ex53', component: Fashion },
+  { path: 'ex63', component: Exercise63 },
+  { path: 'cart', component: Cart },
   { path: '**', component: Pagenotfound },
 ];
 

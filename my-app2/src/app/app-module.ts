@@ -36,6 +36,8 @@ import { BooksDelete } from './books-delete/books-delete';
 import { Fashion } from './fashion/fashion';
 import { Login } from './login/login';
 import { Register } from './register/register';
+import { Exercise63 } from './exercise63/exercise63';
+import { Cart } from './cart/cart';
 
 
 @NgModule({
@@ -70,7 +72,9 @@ import { Register } from './register/register';
     BooksDelete,
     Fashion,
     Login,
-    Register
+    Register,
+    Exercise63,
+    Cart
     
   
   

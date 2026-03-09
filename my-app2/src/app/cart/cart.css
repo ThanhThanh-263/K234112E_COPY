@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* ===== HOST ===== */
+:host {
+  display: block;
+  background-color: #f5f0e8;
+  min-height: 100vh;
+  padding: 48px 32px;
+  font-family: 'Crimson Pro', Georgia, serif;
+  color: #2c1f0f;
+  box-sizing: border-box;
+}
+
+/* ===== CONTAINER ===== */
+.cart {
+  max-width: 860px;
+  margin: 0 auto;
+  font-family: 'Crimson Pro', Georgia, serif;
+  color: #2c1f0f;
+}
+
+/* ===== TITLE ===== */
+.cart h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #4a2c0a;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-left: 5px solid #c9873e;
+  padding-left: 16px;
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+
+/* ===== MESSAGE ===== */
+.message {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #c9873e;
+  margin-bottom: 20px;
+  padding-left: 21px;
+  min-height: 1.2em;
+}
+.message::before {
+  content: '✦ ';
+  color: #c9873e;
+  font-style: normal;
+  font-size: 0.75rem;
+}
+
+/* ===== CART ITEM ===== */
+.cart-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: #fffdf7;
+  border: 1px solid #d4b896;
+  box-shadow:
+    4px 4px 0px #d4b896,
+    8px 8px 0px rgba(139, 99, 64, 0.12);
+  padding: 20px;
+  margin-bottom: 20px;
+  animation: fadeUp 0.45s ease both;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    6px 6px 0px #c9873e,
+    12px 12px 0px rgba(139, 99, 64, 0.18);
+}
+
+.cart-item:nth-child(1) { animation-delay: 0.05s; }
+.cart-item:nth-child(2) { animation-delay: 0.10s; }
+.cart-item:nth-child(3) { animation-delay: 0.15s; }
+.cart-item:nth-child(4) { animation-delay: 0.20s; }
+.cart-item:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== CHECKBOX ===== */
+.cart-item input[type="checkbox"] {
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  accent-color: #c9873e;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ===== ITEM IMAGE ===== */
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid #d4b896;
+  box-shadow: 2px 2px 6px rgba(74, 44, 10, 0.15);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-item img:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 4px 6px 16px rgba(74, 44, 10, 0.28);
+}
+
+/* ===== ITEM DETAILS ===== */
+.details {
+  flex: 1;
+}
+
+.details h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #2c1f0f;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.details p {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: #4a2c0a;
+  margin: 4px 0;
+  letter-spacing: 0.3px;
+}
+
+.details strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #4a2c0a;
+  letter-spacing: 0.5px;
+}
+
+/* ===== QUANTITY INPUT ===== */
+.details input[type="number"] {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  color: #2c1f0f;
+  background: #f5f0e8;
+  border: 1px solid #d4b896;
+  padding: 4px 10px;
+  width: 72px;
+  margin-left: 6px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.details input[type="number"]:focus {
+  border-color: #c9873e;
+  box-shadow: 0 0 0 2px rgba(201, 135, 62, 0.18);
+}
+
+/* ===== ACTIONS ===== */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.actions button {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  font-style: italic;
+  letter-spacing: 1px;
+  padding: 10px 30px;
+  background: #4a2c0a;
+  color: #f5dab5;
+  border: 1.5px solid #4a2c0a;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.actions button:hover {
+  background: #c9873e;
+  border-color: #c9873e;
+  color: #fff;
+}
+
+.actions button:active {
+  background: #3a2008;
+  border-color: #3a2008;
+}
+
+/* ===== CART TOTAL ===== */
+.cart-total {
+  border-top: 1.5px solid #d4b896;
+  padding-top: 16px;
+  margin-bottom: 24px;
+  text-align: right;
+}
+
+.cart-total p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #4a2c0a;
+  letter-spacing: 1px;
+}
+
+/* ===== EMPTY CART ===== */
+.cart ng-template p,
+p:has(+ a[routerLink]) {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8b6340;
+}
+
+/* ===== CONTINUE SHOPPING LINK ===== */
+.cart > p a {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #4a2c0a;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #c9873e;
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.cart > p a:hover {
+  color: #c9873e;
+  border-color: #4a2c0a;
+}

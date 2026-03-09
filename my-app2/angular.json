@@ -32,7 +32,13 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "public",
+                "output": ""
               }
             ],
             "styles": [
@@ -68,8 +74,8 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "options": {
-          "buildTarget": "my-app2:build",
-          "proxyConfig": "src/proxy.conf.json"
+            "buildTarget": "my-app2:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
